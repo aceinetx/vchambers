@@ -1,0 +1,57 @@
+﻿  vchambers.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\curses.h(183,1): warning C4005: MOUSE_MOVED: изменение макроопределения
+  (компиляция исходного файла "vchambers.cpp")
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\wincontypes.h(103,1):
+  см. предыдущее определение "MOUSE_MOVED"
+  
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(84,17): warning C4305: инициализация: усечение из "double" в "float"
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(89,27): warning C4305: инициализация: усечение из "double" в "float"
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(427,115): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(492,68): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(493,62): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(513,31): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(514,31): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(530,94): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(530,83): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(538,68): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(539,62): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(550,64): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(551,58): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(564,58): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(565,52): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(607,36): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(609,36): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(611,36): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(615,40): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(616,40): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(621,40): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(622,40): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(635,50): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(636,50): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(637,75): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(638,70): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(663,59): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(689,47): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(690,47): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(691,65): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(692,60): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(702,1): warning C4305: +=: усечение из "double" в "float"
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(751,1): warning C4305: +=: усечение из "double" в "float"
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(784,44): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(785,44): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(793,44): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(794,44): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(805,69): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(808,71): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(811,71): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(814,72): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(908,33): warning C4244: -=: преобразование "double" в "int", возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(913,77): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(927,32): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(928,32): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(934,1): warning C4305: +=: усечение из "double" в "float"
+C:\Users\aceinet\source\repos\vchambers\vchambers\vchambers.cpp(936,1): warning C4305: +=: усечение из "double" в "float"
+LINK : warning LNK4098: библиотека по умолчанию "LIBCMT" конфликтует с использованием других библиотек; используйте /NODEFAULTLIB:library
+  vchambers.vcxproj -> C:\Users\aceinet\source\repos\vchambers\x64\Debug\vchambers.exe
+  "pwsh.exe" не является внутренней или внешней
+  командой, исполняемой программой или пакетным файлом.

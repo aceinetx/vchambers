@@ -1,0 +1,29 @@
+﻿vchambers.obj : error LNK2001: неразрешенный внешний символ _mvprintw.
+vchambers.obj : error LNK2001: неразрешенный внешний символ _endwin.
+vchambers.obj : error LNK2001: неразрешенный внешний символ _noecho.
+vchambers.obj : error LNK2001: неразрешенный внешний символ _keypad.
+vchambers.obj : error LNK2001: неразрешенный внешний символ _init_pair.
+vchambers.obj : error LNK2001: неразрешенный внешний символ _nodelay.
+vchambers.obj : error LNK2001: неразрешенный внешний символ _attroff.
+vchambers.obj : error LNK2001: неразрешенный внешний символ _clear.
+    Указание на символы, которые определены и могут подойти:
+      "public: void __thiscall std::_Tree<class std::_Tmap_traits<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class nlohmann::json_abi_v3_11_2::basic_json<class std::map,class std::vector,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,bool,__int64,unsigned __int64,double,class std::allocator,struct nlohmann::json_abi_v3_11_2::adl_serializer,class std::vector<unsigned char,class std::allocator<unsigned char> > >,struct std::less<void>,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class nlohmann::json_abi_v3_11_2::basic_json<class std::map,class std::vector,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,bool,__int64,unsigned __int64,double,class std::allocator,struct nlohmann::json_abi_v3_11_2::adl_serializer,class std::vector<unsigned char,class std::allocator<unsigned char> > > > >,0> >::clear(void)" (?clear@?$_Tree@V?$_Tmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@json_abi_v3_11_2@nlohmann@@V?$vector@EV?$allocator@E@std@@@2@@json_abi_v3_11_2@nlohmann@@U?$less@X@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@json_abi_v3_11_2@nlohmann@@V?$vector@EV?$allocator@E@std@@@2@@json_abi_v3_11_2@nlohmann@@@std@@@2@$0A@@std@@@std@@QAEXXZ)
+      "public: void __thiscall std::basic_ios<char,struct std::char_traits<char> >::clear(int,bool)" (?clear@?$basic_ios@DU?$char_traits@D@std@@@std@@QAEXH_N@Z)
+      "public: void __thiscall std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::clear(void)" (?clear@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXXZ)
+      "public: void __thiscall std::vector<char,class std::allocator<char> >::clear(void)" (?clear@?$vector@DV?$allocator@D@std@@@std@@QAEXXZ)
+      "public: void __thiscall std::vector<class nlohmann::json_abi_v3_11_2::basic_json<class std::map,class std::vector,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,bool,__int64,unsigned __int64,double,class std::allocator,struct nlohmann::json_abi_v3_11_2::adl_serializer,class std::vector<unsigned char,class std::allocator<unsigned char> > >,class std::allocator<class nlohmann::json_abi_v3_11_2::basic_json<class std::map,class std::vector,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,bool,__int64,unsigned __int64,double,class std::allocator,struct nlohmann::json_abi_v3_11_2::adl_serializer,class std::vector<unsigned char,class std::allocator<unsigned char> > > > >::clear(void)" (?clear@?$vector@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@json_abi_v3_11_2@nlohmann@@V?$vector@EV?$allocator@E@std@@@2@@json_abi_v3_11_2@nlohmann@@V?$allocator@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@json_abi_v3_11_2@nlohmann@@V?$vector@EV?$allocator@E@std@@@2@@json_abi_v3_11_2@nlohmann@@@std@@@std@@QAEXXZ)
+vchambers.obj : error LNK2001: неразрешенный внешний символ _start_color.
+vchambers.obj : error LNK2001: неразрешенный внешний символ _initscr.
+vchambers.obj : error LNK2001: неразрешенный внешний символ _wgetch.
+vchambers.obj : error LNK2001: неразрешенный внешний символ _nc_getmouse.
+vchambers.obj : error LNK2001: неразрешенный внешний символ _attron.
+vchambers.obj : error LNK2001: неразрешенный внешний символ _getmaxx.
+vchambers.obj : error LNK2001: неразрешенный внешний символ _getmaxy.
+vchambers.obj : error LNK2001: неразрешенный внешний символ _has_colors.
+vchambers.obj : error LNK2001: неразрешенный внешний символ _stdscr.
+vchambers.obj : error LNK2001: неразрешенный внешний символ _move.
+    Указание на символы, которые определены и могут подойти:
+      "public: static char * __cdecl std::_Char_traits<char,int>::move(char * const,char const * const,unsigned int)" (?move@?$_Char_traits@DH@std@@SAPADQADQBDI@Z)
+vchambers.obj : error LNK2001: неразрешенный внешний символ _curs_set.
+vchambers.obj : error LNK2001: неразрешенный внешний символ _refresh.
+C:\Users\aceinet\source\repos\vchambers\Release\vchambers.exe : fatal error LNK1120: неразрешенных внешних элементов: 20

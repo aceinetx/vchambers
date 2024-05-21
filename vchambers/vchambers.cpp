@@ -397,7 +397,7 @@ public:
             break;
         default:
             end();
-            cout << "[VChambers:ERROR] Invaild level\n";
+            cout << "[ERR] Invaild level\n";
             exit(1);
         }
 

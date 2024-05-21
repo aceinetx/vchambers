@@ -54,7 +54,7 @@ struct Entity {
     int health;
     int entity_id;
     bool walking_path;
-    double dx; // NOT DELTA!!
+    double dx;
     double dy;
 };
 

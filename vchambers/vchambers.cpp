@@ -1,6 +1,10 @@
 ﻿#include <iostream>
+#ifdef WIN32
 #include <Windows.h>
 #include <curses.h>
+#else
+#include <ncurses.h>
+#endif
 #include <vector>
 #include <thread>
 #include <string>
@@ -8,11 +12,28 @@
 #include "json.hpp"
 #include <math.h>
 
+#ifndef WIN32
+#include <time.h>
+#include <unistd.h>
+
+void Sleep(int milliseconds){
+   struct timespec ts;
+    ts.tv_sec = milliseconds / 1000;
+    ts.tv_nsec = (milliseconds % 1000) * 1000000;
+    nanosleep(&ts, NULL);
+    if (milliseconds >= 1000)
+      sleep(milliseconds / 1000);
+    usleep((milliseconds % 1000) * 1000);
+}
+#endif
+
 using std::cout, std::endl, std::vector, std::string, std::wstring, std::thread, std::to_string, std::ostream, std::ifstream, nlohmann::json;
 
 std::ifstream f("VChambers.json");
 
+#ifdef WIN32
 HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
+#endif
 
 namespace ItemTexts {
     char get_item_char(int id) {
@@ -263,15 +284,18 @@ public:
         gamethread.detach();
 
 
-
+#ifdef WIN32
         SetConsoleTextAttribute(hStdOut, 0xc);
+#endif
         cout << "<<<=========----------------- VChambers -----------------=========>>>\n";
         cout << "<<<=========                                            -=========>>>\n";
         cout << "<<<=========                  Controls:                 -=========>>>\n";
         cout << "<<<=========              W, A, S, D  - Move            -=========>>>\n";
         cout << "<<<=========              LEFT, RIGHT - Aim             -=========>>>\n";
         cout << "<<<=========              UP, DOWN    - Choose item     -=========>>>\n";
+#ifdef WIN32
         SetConsoleTextAttribute(hStdOut, 0xb);
+#endif
         cout << "<<<=========         Modify settings in VChambers.json  -=========>>>\n";
         cout << "<<<=========                                            -=========>>>\n";
         cout << "<<<=========                                            -=========>>>\n";
@@ -279,7 +303,9 @@ public:
         cout << "<<<=========                                            -=========>>>\n";
         cout << "<<<=========               Made by Aceinet              -=========>>>\n";
         cout << "<<<=========-----------------...........-----------------=========>>>\n";
+#ifdef WIN32
         SetConsoleTextAttribute(hStdOut, 7);
+#endif
         int k = getchar();
         if (k == 'q') {
             debug = true;
@@ -1102,7 +1128,11 @@ public:
         refresh();
 
 
+#ifdef WIN32
         nc_getmouse(&ev);
+#else
+        getmouse(&ev);
+#endif
         if (ev.x != 0 && (ev.y != 0)) {
             float m_angle = 0;
             while (m_angle < 16.0) {

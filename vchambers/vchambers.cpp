@@ -1169,4 +1169,5 @@ int main() {
     }
     vchambers->end();
 
+    delete vchambers;
 }

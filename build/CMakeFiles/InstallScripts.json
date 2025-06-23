@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/aceinet/vchambers/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,17 +1,14 @@
 #include "vchambers.hh"
-#include "sleep.hh"
 #include "item_texts.hh"
+#include "math.hh"
+#include "sleep.hh"
 #include <fstream>
 #include <iostream>
 #include <thread>
 
 using std::cout, std::endl, std::string, std::wstring, std::thread, std::ostream, std::ifstream, nlohmann::json;
 
-#ifdef WIN32
-HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
-#endif
-
-void vc::VChambers::initalize()  {
+void vc::VChambers::initalize() {
 	player = Player();
 	f = std::ifstream("VChambers.json");
 
@@ -87,8 +84,6 @@ void vc::VChambers::initalize()  {
 		}
 	}
 
-	// data["entitytile_list"] = 1;
-
 	if (!data["entitytile_list"].is_array()) {
 		data["entitytile_list"] = json::array();
 	} else {
@@ -135,9 +130,6 @@ void vc::VChambers::initalize()  {
 	thread gamethread(&VChambers::game_thread, this);
 	gamethread.detach();
 
-#ifdef WIN32
-	SetConsoleTextAttribute(hStdOut, 0xc);
-#endif
 	cout << "<<<=========----------------- VChambers "
 					"-----------------=========>>>\n";
 	cout << "<<<=========                                            "
@@ -150,9 +142,6 @@ void vc::VChambers::initalize()  {
 					"-=========>>>\n";
 	cout << "<<<=========              UP, DOWN    - Choose item     "
 					"-=========>>>\n";
-#ifdef WIN32
-	SetConsoleTextAttribute(hStdOut, 0xb);
-#endif
 	cout << "<<<=========         Modify settings in VChambers.json  "
 					"-=========>>>\n";
 	cout << "<<<=========                                            "
@@ -167,9 +156,6 @@ void vc::VChambers::initalize()  {
 					"-=========>>>\n";
 	cout << "<<<=========-----------------...........-----------------========="
 					">>>\n";
-#ifdef WIN32
-	SetConsoleTextAttribute(hStdOut, 7);
-#endif
 	int k = getchar();
 	if (k == 'q') {
 		debug = true;
@@ -238,8 +224,8 @@ void vc::VChambers::init_level(bool first_init) {
 									"###########");
 
 		if (!first_init) {
-			create_entity(0, random(10, 20), random(8, 9));
-			create_entity(0, random(52, 70), random(1, 5));
+			create_entity(0, math::random(10, 20), math::random(8, 9));
+			create_entity(0, math::random(52, 70), math::random(1, 5));
 
 			create_item(1, 1, 10);
 			create_item(2, 20, 10);
@@ -353,44 +339,6 @@ void vc::VChambers::save_json() {
 	n.close();
 }
 
-void vc::VChambers::create_door(int x, int y) {
-	Door d;
-	d.x = x;
-	d.y = y;
-	d.opened = false;
-	door_list.push_back(d);
-}
-
-void vc::VChambers::create_entitytile(int x, int y, int id) {
-	EntityTile et;
-	et.x = x;
-	et.y = y;
-	et.id = id;
-	et.health = 100;
-	entitytile_list.push_back(et);
-}
-
-void vc::VChambers::create_entity(int id, int x, int y) {
-	Entity e;
-	e.y = clamp(y, 0, (int)map.size() - 2);
-	e.x = clamp(x, 0, (int)map.at(0).size() - 2);
-	e.dx = e.x;
-	e.dy = e.y;
-	e.health = 100;
-	e.walking_path = false;
-	e.entity_id = 0;
-	entity_list.push_back(e);
-}
-
-void vc::VChambers::create_item(int id, int x, int y) {
-	Item item;
-	item.id = id;
-	item.y = clamp(y, 0, (int)map.size() - 2);
-	item.x = clamp(x, 0, map.at(0).size() - 2);
-
-	item_list.push_back(item);
-}
-
 void vc::VChambers::end() {
 	endwin();
 }
@@ -417,28 +365,6 @@ bool vc::VChambers::collides(char tile, int y, int x) {
 	return false;
 }
 
-bool vc::VChambers::in_range(int value, int _min, int _max) {
-	if (value >= _min && (value <= _max))
-		return true;
-	return false;
-}
-
-int vc::VChambers::clamp(int value, int _min, int _max) {
-	if (value < _min)
-		return _min;
-	if (value > _max)
-		return _max;
-	return value;
-}
-
-int vc::VChambers::random(int _min, int _max) {
-	int result = _min + (rand() % _max + 1);
-
-	srand((unsigned)time(NULL));
-
-	return result;
-}
-
 void vc::VChambers::game_thread() {
 	while (true) {
 		if (scene == 1) {
@@ -459,8 +385,8 @@ void vc::VChambers::game_thread() {
 				VCVec2 entity_pos;
 				VCVec2 player_pos;
 
-				entity.x = clamp(entity.x, 1, map.at(0).size() - 2);
-				entity.y = clamp(entity.y, 1, map.size() - 2);
+				entity.x = math::clamp(entity.x, 1, map.at(0).size() - 2);
+				entity.y = math::clamp(entity.y, 1, map.size() - 2);
 
 				entity_pos.x = entity.x;
 				entity_pos.y = entity.y;
@@ -469,7 +395,7 @@ void vc::VChambers::game_thread() {
 				player_pos.y = player.x;
 
 				if (entity.entity_id == 0) {
-					if (in_range(player.x, entity.x - entity_damage_range, entity.x + entity_damage_range) && (in_range(player.y, entity.y - entity_damage_range, entity.y + entity_damage_range))) {
+					if (math::in_range(player.x, entity.x - entity_damage_range, entity.x + entity_damage_range) && (math::in_range(player.y, entity.y - entity_damage_range, entity.y + entity_damage_range))) {
 						player.dhealth -= 0.3;
 					}
 				}
@@ -488,8 +414,8 @@ void vc::VChambers::game_thread() {
 					while (edist < 1) {
 						int eray_x = entity.x + e_eye_x * edist;
 						int eray_y = entity.y + e_eye_y * edist;
-						eray_x = clamp(eray_x, 0, map.at(0).size() - 2);
-						eray_y = clamp(eray_y, 0, map.size() - 2);
+						eray_x = math::clamp(eray_x, 0, map.at(0).size() - 2);
+						eray_y = math::clamp(eray_y, 0, map.size() - 2);
 
 						if (collides(map.at(eray_y).at(eray_x), eray_y, eray_x)) {
 							break_l = true;
@@ -508,7 +434,7 @@ void vc::VChambers::game_thread() {
 						break;
 				}
 
-				int move = random(1, 8) / 2;
+				int move = math::random(1, 8) / 2;
 				if (player_found)
 					move = -1;
 				int old_x = entity.dx;
@@ -519,7 +445,7 @@ void vc::VChambers::game_thread() {
 					break;
 				case 2:
 					entity.dx -= .2;
-					if (random(0, 1)) {
+					if (math::random(0, 1)) {
 						entity.dy += .2;
 					}
 					break;
@@ -538,8 +464,8 @@ void vc::VChambers::game_thread() {
 				entity.x = (int)entity.dx;
 				entity.y = (int)entity.dy;
 
-				entity.x = clamp(entity.x, 1, map.at(0).size() - 2);
-				entity.y = clamp(entity.y, 1, map.size() - 2);
+				entity.x = math::clamp(entity.x, 1, map.at(0).size() - 2);
+				entity.y = math::clamp(entity.y, 1, map.size() - 2);
 
 				i++;
 			}
@@ -549,8 +475,8 @@ void vc::VChambers::game_thread() {
 				if (map.at(player.y).at(player.x) == 'N') {
 					continue;
 				}
-				item.x = clamp(item.x, 1, map.at(0).size() - 1);
-				item.y = clamp(item.y, 1, map.size() - 1);
+				item.x = math::clamp(item.x, 1, map.at(0).size() - 1);
+				item.y = math::clamp(item.y, 1, map.size() - 1);
 				if (item.x == player.x && (item.y == player.y)) {
 					player.inventory.push_back(item.id);
 					item_list.erase(item_list.begin() + j);
@@ -563,8 +489,8 @@ void vc::VChambers::game_thread() {
 				if (map.at(player.y).at(player.x) == 'N') {
 					continue;
 				}
-				d.x = clamp(d.x, 1, map.at(0).size() - 1);
-				d.y = clamp(d.y, 1, map.size() - 1);
+				d.x = math::clamp(d.x, 1, map.at(0).size() - 1);
+				d.y = math::clamp(d.y, 1, map.size() - 1);
 			}
 
 			i = 0;
@@ -666,8 +592,8 @@ void vc::VChambers::render() {
 				VCVec2 render_ray;
 				render_ray.x = (int)player.x + render_eye_x * render_distance;
 				render_ray.y = (int)player.y + render_eye_y * render_distance;
-				render_ray.x = clamp(render_ray.x, 0, map.at(0).length() - 1);
-				render_ray.y = clamp(render_ray.y, 0, map.size() - 1);
+				render_ray.x = math::clamp(render_ray.x, 0, map.at(0).length() - 1);
+				render_ray.y = math::clamp(render_ray.y, 0, map.size() - 1);
 
 				char map_char = map.at(render_ray.y).at(render_ray.x);
 				short color = 0;
@@ -732,8 +658,8 @@ void vc::VChambers::render() {
 					VCVec2 ray;
 					ray.x = (int)player.x + eye_x * distance;
 					ray.y = (int)player.y + eye_y * distance;
-					ray.x = clamp(ray.x, 1, map.at(0).length());
-					ray.y = clamp(ray.y, 1, map.size() - 2);
+					ray.x = math::clamp(ray.x, 1, map.at(0).length());
+					ray.y = math::clamp(ray.y, 1, map.size() - 2);
 					if (map.at(ray.y).at(ray.x) == '#') {
 						break;
 					}
@@ -850,16 +776,16 @@ void vc::VChambers::render() {
 		} else if (scene == 1) {
 			VCVec2 up_tile_coord;
 			up_tile_coord.x = player.x;
-			up_tile_coord.y = clamp(player.y - 1, 0, map.size() - 1);
+			up_tile_coord.y = math::clamp(player.y - 1, 0, map.size() - 1);
 			VCVec2 down_tile_coord;
 			down_tile_coord.x = player.x;
-			down_tile_coord.y = clamp(player.y + 1, 0, map.size() - 1);
+			down_tile_coord.y = math::clamp(player.y + 1, 0, map.size() - 1);
 			VCVec2 left_tile_coord;
 			left_tile_coord.y = player.y;
-			left_tile_coord.x = clamp(player.x - 1, 0, map.size() - 1);
+			left_tile_coord.x = math::clamp(player.x - 1, 0, map.size() - 1);
 			VCVec2 right_tile_coord;
 			right_tile_coord.y = player.y;
-			right_tile_coord.x = clamp(player.x + 1, 0, map.size() - 1);
+			right_tile_coord.x = math::clamp(player.x + 1, 0, map.size() - 1);
 
 			for (Door& door : door_list) {
 				if (up_tile_coord.x == door.x && (up_tile_coord.y == door.y)) {
@@ -910,8 +836,8 @@ void vc::VChambers::render() {
 						player.ammo -= 1;
 						if (!ray_entitytiles.empty()) {
 							if (ray_entitytiles.at(0)->id == 1) {
-								if (in_range(player.x, ray_entitytiles.at(0)->x - 2, ray_entitytiles.at(0)->x + 2)) {
-									if (in_range(player.y, ray_entitytiles.at(0)->y - 2, ray_entitytiles.at(0)->y + 2)) {
+								if (math::in_range(player.x, ray_entitytiles.at(0)->x - 2, ray_entitytiles.at(0)->x + 2)) {
+									if (math::in_range(player.y, ray_entitytiles.at(0)->y - 2, ray_entitytiles.at(0)->y + 2)) {
 										player.dhealth -= 15;
 										int old_px = player.x;
 										int old_py = player.y;
@@ -960,7 +886,7 @@ void vc::VChambers::render() {
 				}
 
 				if (current_item == 2) {
-					player.dhealth = clamp(player.health + 15, 0, 100);
+					player.dhealth = math::clamp(player.health + 15, 0, 100);
 					player.inventory.erase(player.inventory.begin() + selected_item);
 				}
 
@@ -998,7 +924,7 @@ void vc::VChambers::render() {
 			player.dashing = true;
 			player.dash_count = 5;
 		}
-		selected_item = clamp(selected_item, 0, player.inventory.size() - 1);
+		selected_item = math::clamp(selected_item, 0, player.inventory.size() - 1);
 	}
 
 	refresh();

@@ -1,3 +1,0 @@
-/home/aceinet/vchambers/build/CMakeFiles/vchambers.dir
-/home/aceinet/vchambers/build/CMakeFiles/edit_cache.dir
-/home/aceinet/vchambers/build/CMakeFiles/rebuild_cache.dir

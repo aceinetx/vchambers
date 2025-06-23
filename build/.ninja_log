@@ -1,4 +1,0 @@
-# ninja log v6
-1	10	1750685256438030603	/home/aceinet/vchambers/build/CMakeFiles/cmake.verify_globs	eba2c25aa3997f14
-10	2112	1750685256445843842	CMakeFiles/vchambers.dir/src/vchambers.cc.o	1f86321391ece88a
-2113	2176	1750685258548818293	vchambers	6dd27de94b8c8dab

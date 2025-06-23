@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/home/aceinet/vchambers/build",
-  "command": "/usr/bin/c++ -o CMakeFiles/vchambers.dir/src/vchambers.cc.o -c /home/aceinet/vchambers/src/vchambers.cc",
-  "file": "/home/aceinet/vchambers/src/vchambers.cc",
-  "output": "CMakeFiles/vchambers.dir/src/vchambers.cc.o"
-}
-]
